@@ -5,9 +5,166 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Pricing Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<!--Script for toggle button-->
+    <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+    />
+    <script
+            defer
+            src="https://unpkg.com/alpinejs@3.3.2/dist/cdn.min.js"
+    ></script>
+
 </head>
 <body>
-
+<!--Pricing-->
+<div>
+    <div class="flex mt-4 justify-center font-bold text-3xl text-gray-500">
+        Our Pricing
+    </div>
+</div>
+<!--Toggle Button-->
+<div>
+    <div class="flex justify-center space-x-4 mt-8" x-data="{ toggle: '0' }">
+        <div class="text-sm">
+            Annualy
+        </div>
+        <div
+                class="
+          relative
+          w-12
+          h-6
+          transition
+          duration-200
+          ease-linear
+          rounded-full
+        "
+                :class="[toggle === '1' ? 'bg-indigo-400' : 'bg-indigo-600']"
+        >
+            <label
+                    for="toggle"
+                    class="
+            absolute
+            left-0
+            w-6
+            h-6
+            mb-2
+            transition
+            duration-100
+            ease-linear
+            transform
+            bg-white
+            border-2
+            rounded-full
+            cursor-pointer
+          "
+                    :class="[toggle === '1' ? 'translate-x-full border-indigo-400' : 'translate-x-0 border-indigo-400']"
+            ></label>
+            <input
+                    type="checkbox"
+                    id="toggle"
+                    name="toggle"
+                    class="w-full h-full appearance-none focus:outline-none"
+                    @click="toggle === '0' ? toggle = '1' : toggle = '0'"
+            />
+        </div>
+        <div class="text-sm">
+            Monthly
+        </div>
+    </div>
+</div>
+<!--Grid 3 Columns-->
+<div>
+    <div class="bg-gray-300 px-20 mt-10 items-center">
+        <div class="text-center grid md:grid-cols-3">
+                    <!--1ST COLUMN-->
+            <div class="p-5 bg-white my-5 rounded-l-lg">
+                <p class="text-gray-500 font-bold">
+                    Basic
+                </p>
+                <div>
+                    <p class="text-5xl text-gray-700 font-bold">
+                        <span class="text-3xl text-gray-700 font-bold align-middle">$</span> 199.99
+                    </p>
+                    <div class="items-center text-center justify-center rounded-lg">
+                        <div class="divide-y divide-gray-500 p-4">
+                            <div class="p-3">
+                                500 GB Storage
+                            </div>
+                            <div class="p-3">
+                                2 Users Allowed
+                            </div>
+                            <div class="p-3">
+                                Send up to 3 GB
+                            </div>
+                        </div>
+                    </div>
+                                        <!--Button "Lean More" CHANGE HOVER LEFT-->
+                    <button class="text-white h-12 w-full text-sm mt-4 flex items-center text-center justify-center rounded-lg bg-gradient-to-r from-indigo-300 to-indigo-400">
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+                    <!--2ND COLUMN-->
+            <div class="p-5 bg-gradient-to-r from-indigo-400 to-indigo-400 rounded-lg">
+                <p class="text-white font-bold">
+                    Professional
+                </p>
+                <div>
+                    <p class="text-5xl text-white font-bold">
+                        <span class="text-3xl text-white font-bold align-middle p-0">$</span> 249.99
+                    </p>
+                    <div class="items-center text-white text-center justify-center rounded-sm">
+                        <div class="divide-y p-4">
+                            <div class="p-3">
+                                1 TB Storage
+                            </div>
+                            <div class="p-3">
+                                5 Users Allowed
+                            </div>
+                            <div class="p-3">
+                                Send up to 10 GB
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button "Lean More" CHANGE HOVER LEFT-->
+                    <button class="text-indigo-500 h-12 w-full text-sm mt-9 flex items-center text-center justify-center rounded-lg bg-white">
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+                    <!--3rd COLUMN-->
+            <div class="p-5 bg-white my-5 rounded-r-lg">
+                <p class="text-gray-500 font-bold">
+                    Master
+                </p>
+                <div>
+                    <p class="text-5xl text-gray-700 font-bold">
+                        <span class="text-3xl text-gray-700 font-bold align-middle">$</span> 399.99
+                    </p>
+                    <div class="items-center text-center justify-center rounded-lg">
+                        <div class="divide-y divide-gray-500 p-4">
+                            <div class="p-3">
+                                2 TB Storage
+                            </div>
+                            <div class="p-3">
+                                10 Users Allowed
+                            </div>
+                            <div class="p-3">
+                                Send up to 20 GB
+                            </div>
+                        </div>
+                    </div>
+                    <!--Button "Lean More" CHANGE HOVER LEFT-->
+                    <button class="text-white h-12 w-full text-sm mt-4 flex items-center text-center justify-center rounded-lg bg-gradient-to-r from-indigo-300 to-indigo-400">
+                        LEARN MORE
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
